@@ -18,11 +18,37 @@ spec:
         image: mrsinghdocker/gemini-clone:5
         ports:
         - containerPort: 3000
-        envFrom:
-          - configMapRef:
+        env:
+        - name: GOOGLE_ID
+          valueFrom:
+            configMapKeyRef:
               name: gemini-configmap
-          - secretRef:
+              key: GOOGLE_ID
+        - name: GOOGLE_SECRET
+          valueFrom:
+            secretKeyRef:
               name: gemini-secrets
+              key: GOOGLE_SECRET
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name: gemini-configmap
+              key: MONGODB_URI
+        - name: NEXTAUTH_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: gemini-secrets
+              key: NEXTAUTH_SECRET
+        - name: NEXTAUTH_URL
+          valueFrom:
+            configMapKeyRef:
+              name: gemini-configmap
+              key: NEXTAUTH_URL
+        - name: NEXT_PUBLIC_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gemini-secrets
+              key: NEXT_PUBLIC_API_KEY
         resources:
           requests:
             cpu: "250m"
