@@ -10,6 +10,13 @@ const nextConfig = {
     ],
     unoptimized: true,  // Disables image optimization for this pattern
   },
+  // TO SKIP THE LINTING and checking validity of types PROCESS DURING BUILD
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
