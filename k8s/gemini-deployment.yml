@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gemini-clone
-        image: mrsinghdocker/gemini-clone:1
+        image: mrsinghdocker/gemini-clone:5
         ports:
         - containerPort: 3000
         env:
