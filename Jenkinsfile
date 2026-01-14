@@ -56,9 +56,9 @@ pipeline {
                         git_creds_id: 'GITHUB_CREDS',
                         docker_image: env.DOCKER_IMAGE,
                         image_tag: env.IMAGE_TAG,
-                        k8s_deployment_file_path: 'k8s/gemini-deployment.yml',
-                        github_repo_name: 'Project-gemini-clone',
-                        git_branch_name: env.GIT_BRANCH
+                        k8s_deployment_file_path: 'gemini-clone-app/k8s/gemini-deployment.yml',
+                        github_repo_name: 'platform-gitops',
+                        git_branch_name: 'main'
                     )
                 }
             }
